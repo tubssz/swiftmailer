@@ -22,7 +22,8 @@
         "mockery/mockery": "1.0.x-dev"
     },
     "autoload": {
-        "files": ["lib/swift_required.php"]
+        "files": ["lib/swift_required.php"],
+        "psr-4": { "Swift\\": "src/" }
     },
     "autoload-dev": {
         "psr-0": { "Swift_": "tests/unit" }
