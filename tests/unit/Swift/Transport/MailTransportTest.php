@@ -426,7 +426,7 @@ class Swift_Transport_MailTransportTest extends \SwiftMailerTestCase
 
     private function createMessage($headers)
     {
-        $message = $this->getMockery('Swift_Mime_Message')->shouldIgnoreMissing();
+        $message = $this->getMockery('Swift_Mime_SimpleMessage')->shouldIgnoreMissing();
         $message->shouldReceive('getHeaders')
                 ->zeroOrMoreTimes()
                 ->andReturn($headers);

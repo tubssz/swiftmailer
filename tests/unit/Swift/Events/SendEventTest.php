@@ -81,8 +81,7 @@ class Swift_Events_SendEventTest extends \PHPUnit_Framework_TestCase
 
     // -- Creation Methods
 
-    private function createEvent(Swift_Transport $source,
-        Swift_Mime_Message $message)
+    private function createEvent(Swift_Transport $source, Swift_Mime_SimpleMessage $message)
     {
         return new Swift_Events_SendEvent($source, $message);
     }
@@ -94,6 +93,6 @@ class Swift_Events_SendEventTest extends \PHPUnit_Framework_TestCase
 
     private function createMessage()
     {
-        return $this->getMockBuilder('Swift_Mime_Message')->getMock();
+        return $this->getMockBuilder('Swift_Mime_SimpleMessage')->disableOriginalConstructor()->getMock();
     }
 }

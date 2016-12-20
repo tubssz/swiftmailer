@@ -95,12 +95,12 @@ class Swift_Transport_MailTransport implements Swift_Transport
      * Recipient/sender data will be retrieved from the Message API.
      * The return value is the number of recipients who were accepted for delivery.
      *
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      * @param string[]           $failedRecipients An array of failures by-reference
      *
      * @return int
      */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
         $failedRecipients = (array) $failedRecipients;
 
@@ -232,7 +232,7 @@ class Swift_Transport_MailTransport implements Swift_Transport
     }
 
     /** Determine the best-use reverse path for this message */
-    private function getReversePath(Swift_Mime_Message $message)
+    private function getReversePath(Swift_Mime_SimpleMessage $message)
     {
         $return = $message->getReturnPath();
         $sender = $message->getSender();
