@@ -444,7 +444,7 @@ class Swift_Transport_MailTransportTest extends \SwiftMailerTestCase
 
     private function createHeaders($headers = array())
     {
-        $set = $this->getMockery('Swift_Mime_HeaderSet')->shouldIgnoreMissing();
+        $set = $this->getMockery('Swift_Mime_SimpleHeaderSet')->shouldIgnoreMissing();
 
         if (count($headers) > 0) {
             foreach ($headers as $name => $header) {
